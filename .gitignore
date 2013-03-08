@@ -1,0 +1,12 @@
+*.pyc
+.DS_Store
+*.swp
+*.swo
+xcuserdata
+*.mode1v3
+*.pbxuser
+build
+*.perspectivev3
+*.pem
+*.cer
+*.p12
