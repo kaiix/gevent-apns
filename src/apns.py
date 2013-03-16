@@ -110,9 +110,9 @@ class APNSError(Exception):
 
 class APNS(object):
     SANDBOX_PUSH_SERVER_ADDRESS = ("gateway.sandbox.push.apple.com", 2195)
-    PRODUCTION_SERVER_ADDRESS = ("gateway.push.apple.com", 2195)
-
     SANDBOX_FEEDBACK_SERVER_ADDRESS = ("feedback.sandbox.push.apple.com", 2196)
+
+    PRODUCTION_PUSH_SERVER_ADDRESS = ("gateway.push.apple.com", 2195)
     PRODUCTION_FEEDBACK_SERVER_ADDRESS = ("feedback.push.apple.com", 2196)
 
     def __init__(self, certificate, sandbox=True, timeout=None):
