@@ -53,7 +53,7 @@ class APNSNotification(object):
 
     def get_payload(self):
         """ JSON object with max size of 256 bytes.
-        
+
         payload = {
             aps : {
                 alert: "message" || {
@@ -163,7 +163,7 @@ class APNS(object):
 
     def _connect(self, server):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        wrapped = ssl.wrap_socket(sock, ssl_version=ssl.PROTOCOL_SSLv3,
+        wrapped = ssl.wrap_socket(sock, ssl_version=ssl.PROTOCOL_TLSv1,
                                   certfile=self.certificate)
         wrapped.connect_ex(server)
         return wrapped
@@ -181,7 +181,7 @@ class APNS(object):
                 gevent.sleep(0)
         except gevent.GreenletExit:
             logger.info("Read error service exit")
- 
+
     def _feedback(self):
         logger.info("Feedback service starting ...")
         try:
